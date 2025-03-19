@@ -13,13 +13,14 @@ const Stars = () => {
 
   const stars = useMemo(() => {
     if (!darkMode) return [];
-    const totalStars = 80;
+    const totalStars = 65; // Number of stars
     return Array.from({ length: totalStars }).map(() => ({
-      top: `${Math.random() * 90}%`,
+      top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       size: `${Math.random() * 2 + 1}px`,
       opacity: Math.random() * 0.5 + 0.5,
-      blur: Math.random() > 0.7 ? "1px" : "0px",
+      blur: Math.random() > 0.6 ? "1px" : "0px",
+      speed: Math.random() * 1.5 + 0.5, //  sparkle effect
     }));
   }, [darkMode]);
 
@@ -30,7 +31,7 @@ const Stars = () => {
       {stars.map((star, i) => (
         <motion.div
           key={i}
-          className="absolute bg-white rounded-full"
+          className="absolute bg-white rounded-full shadow-md"
           style={{
             top: star.top,
             left: star.left,
@@ -40,20 +41,24 @@ const Stars = () => {
             filter: `blur(${star.blur})`,
           }}
           animate={{
-            y: [0, -1, 0],
             opacity: [
               star.opacity,
-              star.opacity - 0.3,
+              Math.random() * 0.3 + 0.7, // Brightness
               star.opacity,
-              star.opacity - 0.1,
+              Math.random() * 0.1 + 0.6, // flicker motion
               star.opacity,
             ],
-            scale: [1, 1.2, 1],
-            backgroundColor: ["#ffffff", "#aabbff", "#ffffff"],
+            scale: [1, 1.5, 1], 
+            boxShadow: [
+              "0 0 2px rgba(255, 255, 255, 0.5)",
+              "0 0 4px rgba(255, 255, 255, 0.8)",
+              "0 0 2px rgba(255, 255, 255, 0.5)",
+            ],
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: star.speed,
             repeat: Infinity,
+            ease: "easeInOut",
           }}
         />
       ))}
