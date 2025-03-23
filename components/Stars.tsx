@@ -14,7 +14,7 @@ type Star = {
 };
 
 // Total number of stars
-const TOTAL_STARS = 30;
+const TOTAL_STARS = 40;
 
 // Animation
 const starAnimation = {
