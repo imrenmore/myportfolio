@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Socials*/}
         <div className="flex justify-center space-x-6 mb-8">
           <a
-            href="mailto:imrenmore@gmail.com"
+            href="mailto:imrenkmore@gmail.com"
             className={`flex items-center ${
               darkMode
                 ? "text-gray-300 hover:text-blue-400"
