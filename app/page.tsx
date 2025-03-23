@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import BackgroundElements from "@/components/BackgroundElements";
-import ScrollButton from "@/components/Scrollbutton";
 import FadeIn from "@/animations/FadeIn";
 import { ThemeProvider } from "@/context/ThemeContext";
 import React from "react";
+import AboutMe from "../about/page";
+import Projects from "@/projects/projects";
 
 export default function Home() {
   return (
@@ -22,8 +23,9 @@ export default function Home() {
           </FadeIn>
           {/* Background elements toggle between stars and ducks */}
           <BackgroundElements />
-          <ScrollButton />
         </section>
+        <AboutMe />
+        <Projects />
       </main>
     </ThemeProvider>
   );

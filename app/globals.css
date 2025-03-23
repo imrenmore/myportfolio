@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+.about-section {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.05) 30%,
+      transparent 100%
+    );
+    padding: 2rem;
+    border-radius: 12px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .dark-theme .about-section {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 30%,
+      transparent 100%
+    );
+  }
+  
