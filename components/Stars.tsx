@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import React, { useMemo, useEffect, useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
@@ -37,10 +36,33 @@ const starTransition = {
 const Stars: React.FC = () => {
   const { darkMode } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-  // Set mounted to true after the component mounts
+  // Set mounted to true 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Tracking for better performance
+  useEffect(() => {
+    let animationFrameId: number;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      animationFrameId = requestAnimationFrame(() => {
+        setCursorPosition({ x: e.clientX, y: e.clientY });
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, []);
 
   // Generate stars in dark mode
@@ -64,6 +86,16 @@ const Stars: React.FC = () => {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Gradient Overlay Following Cursor */}
+      <div
+        className="absolute w-[400px] h-[400px] bg-gradient-to-r from-purple-900/10 via-indigo-900/10 to-blue-900/10 rounded-full blur-3xl pointer-events-none"
+        style={{
+          transform: `translate(${cursorPosition.x - 200}px, ${cursorPosition.y - 200}px)`,
+          transition: "transform 0.1s linear",
+        }}
+      />
+
+      {/* Stars */}
       {stars.map((star, i) => (
         <motion.div
           key={i}
