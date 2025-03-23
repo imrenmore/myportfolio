@@ -1,5 +1,5 @@
 import SlideIn from "@/animations/SlideIn";
-import ThemeToggle from "./Theme";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   return (

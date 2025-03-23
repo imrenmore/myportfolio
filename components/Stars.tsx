@@ -3,35 +3,71 @@ import { motion } from "framer-motion";
 import React, { useMemo, useEffect, useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
 
-const Stars = () => {
+// Type for single star
+type Star = {
+  top: string;
+  left: string;
+  size: string;
+  opacity: number;
+  blur: string;
+  speed: number;
+};
+
+// Total number of stars
+const TOTAL_STARS = 40; 
+
+// Animation 
+const starAnimation = {
+  opacity: [0.5, 0.8, 0.5, 0.6, 0.5],
+  scale: [1, 1.5, 1],
+  boxShadow: [
+    "0 0 2px rgba(255, 255, 255, 0.5)",
+    "0 0 4px rgba(255, 255, 255, 0.8)",
+    "0 0 2px rgba(255, 255, 255, 0.5)",
+  ],
+};
+
+// Transition config
+const starTransition = {
+  duration: 2,
+  repeat: Infinity,
+  ease: "easeInOut",
+} as const;
+
+const Stars: React.FC = () => {
   const { darkMode } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  // Set mounted to true after the component mounts
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Generate stars in dark mode
   const stars = useMemo(() => {
-    if (!darkMode) return [];
-    const totalStars = 65; // Number of stars
-    return Array.from({ length: totalStars }).map(() => ({
+    if (!mounted || !darkMode) return [] as Star[];
+
+    const generateStar = (): Star => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       size: `${Math.random() * 2 + 1}px`,
       opacity: Math.random() * 0.5 + 0.5,
       blur: Math.random() > 0.6 ? "1px" : "0px",
-      speed: Math.random() * 1.5 + 0.5, //  sparkle effect
-    }));
-  }, [darkMode]);
+      speed: Math.random() * 0.5 + 0.5,
+    });
 
-  if (!mounted) return null;
+    return Array.from({ length: TOTAL_STARS }, generateStar);
+  }, [mounted, darkMode]);
+
+  // Don't render on the server or if not mounted
+  if (!mounted || typeof window === "undefined") return null;
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {stars.map((star, i) => (
         <motion.div
           key={i}
-          className="absolute bg-white rounded-full shadow-md"
+          className="star absolute bg-white rounded-full shadow-md"
           style={{
             top: star.top,
             left: star.left,
@@ -40,26 +76,8 @@ const Stars = () => {
             opacity: star.opacity,
             filter: `blur(${star.blur})`,
           }}
-          animate={{
-            opacity: [
-              star.opacity,
-              Math.random() * 0.3 + 0.7, // Brightness
-              star.opacity,
-              Math.random() * 0.1 + 0.6, // flicker motion
-              star.opacity,
-            ],
-            scale: [1, 1.5, 1], 
-            boxShadow: [
-              "0 0 2px rgba(255, 255, 255, 0.5)",
-              "0 0 4px rgba(255, 255, 255, 0.8)",
-              "0 0 2px rgba(255, 255, 255, 0.5)",
-            ],
-          }}
-          transition={{
-            duration: star.speed,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          animate={starAnimation}
+          transition={{ ...starTransition, duration: star.speed }}
         />
       ))}
     </div>
