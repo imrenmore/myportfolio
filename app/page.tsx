@@ -8,11 +8,13 @@ import Projects from "@/projects/projects";
 import Resume from "@/resume/resume";
 import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   return (
     <ThemeProvider>
       <SpeedInsights />
+      <Analytics />
       <main className="min-h-screen flex flex-col">
         <Navbar />
         <section className="relative flex flex-col items-center justify-center h-screen">
