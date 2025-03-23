@@ -7,10 +7,12 @@ import AboutMe from "../about/page";
 import Projects from "@/projects/projects";
 import Resume from "@/resume/resume";
 import Footer from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Home() {
   return (
     <ThemeProvider>
+      <SpeedInsights />
       <main className="min-h-screen flex flex-col">
         <Navbar />
         <section className="relative flex flex-col items-center justify-center h-screen">
