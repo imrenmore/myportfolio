@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import React from "react";
 import AboutMe from "../about/page";
 import Projects from "@/projects/projects";
+import Resume from "@/resume/resume";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ export default function Home() {
         </section>
         <AboutMe />
         <Projects />
+        <Resume />
+        <Footer />
       </main>
     </ThemeProvider>
   );
