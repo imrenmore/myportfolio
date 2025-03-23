@@ -24,7 +24,7 @@ const LanguagesCard: React.FC = () => {
 
   return (
     <motion.div
-      className={`relative p-6 rounded-2xl shadow-xl max-w-sm w-full border backdrop-blur-lg transition-all duration-300
+      className={`relative p-6 rounded-2xl shadow-xl w-full max-w-sm mx-auto sm:max-w-md md:max-w-lg lg:max-w-sm xl:max-w-sm border backdrop-blur-lg transition-all duration-300
         ${
           darkMode
             ? "bg-gray-900/70 border-gray-700 text-white"
