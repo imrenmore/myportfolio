@@ -14,9 +14,9 @@ type Star = {
 };
 
 // Total number of stars
-const TOTAL_STARS = 40; 
+const TOTAL_STARS = 30;
 
-// Animation 
+// Animation
 const starAnimation = {
   opacity: [0.5, 0.8, 0.5, 0.6, 0.5],
   scale: [1, 1.5, 1],
