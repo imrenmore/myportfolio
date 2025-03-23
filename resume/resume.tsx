@@ -106,7 +106,7 @@ const Resume = () => {
                   darkMode ? "text-gray-200" : "text-gray-800"
                 }`}
               >
-                Elevate to Innovate Program Participant
+                Elevate to Innovate Program
               </h3>
               <span
                 className={`text-sm ${
@@ -118,8 +118,8 @@ const Resume = () => {
             </div>
             <ul className="space-y-2">
               {[
-                "Implemented AI-driven solutions to real-world challenges, improving operational efficiency by 25%",
-                "Gained hands-on experience with AWS and AI technologies, reducing infrastructure costs by 15%",
+                "Implemented AI-driven solutions to real-world challenges, improving operational efficiency",
+                "Gained hands-on experience with AWS and AI technologies",
                 "Enhanced technical proficiency in innovative solutions through collaboration with industry leaders",
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
