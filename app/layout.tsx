@@ -12,9 +12,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Define the base URL for metadata (e.g., your production URL)
+const METADATA_BASE =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://imrenmore.com";
+
 export const metadata: Metadata = {
-  title: "Imren's Portfolio",
-  description: "JS Portfolio",
+  metadataBase: new URL(METADATA_BASE),
+  title: "Imren More",
+  description: "Imren More builds accessible web experiences.",
+  openGraph: {
+    title: "Imren More",
+    description: "Imren More builds accessible web experiences.",
+    images: [
+      {
+        url: "images/og-image.png", 
+        width: 1200,
+        height: 630,
+        alt: "Imren More - Front End Engineer",
+      },
+    ],
+    type: "website",
+    url: "/", 
+  },
 };
 
 export default function RootLayout({
@@ -28,8 +47,7 @@ export default function RootLayout({
         <link rel="icon" href="/duckie.svg" type="image/svg+xml" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
