@@ -1,11 +1,17 @@
 "use client";
 import { useTheme } from "@/context/ThemeContext";
 import Stars from "./Stars";
-import Ducks from "./Ducks"; 
-// switch theme from stars to ducks
-const BackgroundElements = () => {
+import Ducks from "./Ducks";
+import React, { Suspense } from "react";
+
+const BackgroundElements: React.FC = () => {
   const { darkMode } = useTheme();
-  return <>{darkMode ? <Stars /> : <Ducks />}</>; // Stars in dark mode, Ducks in light mode
+
+  return (
+    <Suspense fallback={null}>
+      {darkMode ? <Stars /> : <Ducks />}
+    </Suspense>
+  );
 };
 
-export default BackgroundElements;
+export default React.memo(BackgroundElements);

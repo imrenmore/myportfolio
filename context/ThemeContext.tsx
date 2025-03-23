@@ -2,20 +2,20 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import Stars from "@/components/Stars";
 
-// Define the type for the theme context
+// Type for the theme 
 type ThemeContextType = {
   darkMode: boolean;
   toggleDarkMode: () => void;
 };
 
-// Create the theme context
+// Create theme context
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 // ThemeProvider component
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [darkMode, setDarkMode] = useState(true);
 
-  // Load theme preference from localStorage on mount
+  // Load theme preference from localStorage
   useEffect(() => {
     const storedTheme = localStorage.getItem("darkMode");
     if (storedTheme) {
@@ -47,7 +47,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Custom hook to use the theme context
+// Hook to use the theme context
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
