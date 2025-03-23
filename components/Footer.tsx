@@ -92,7 +92,15 @@ const Footer = () => {
                 darkMode ? "text-blue-400" : "text-blue-700"
               } font-medium`}
             >
-              Visual Studio Code
+              Typescript
+            </span>{" "}
+            and{" "}
+            <span
+              className={`${
+                darkMode ? "text-blue-400" : "text-blue-700"
+              } font-medium`}
+            >
+              TailwindCSS
             </span>
             .
           </p>
@@ -105,23 +113,14 @@ const Footer = () => {
             >
               Next.js
             </span>{" "}
-            and{" "}
+            and deployed with {" "}
             <span
               className={`${
                 darkMode ? "text-blue-400" : "text-blue-700"
               } font-medium`}
             >
-              Tailwind CSS
+              Vercel.
             </span>
-            , deployed with{" "}
-            <span
-              className={`${
-                darkMode ? "text-blue-400" : "text-blue-700"
-              } font-medium`}
-            >
-              Vercel
-            </span>
-            .
           </p>
         </div>
       </div>
