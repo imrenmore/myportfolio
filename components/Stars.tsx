@@ -13,7 +13,7 @@ type Star = {
 };
 
 // Total number of stars
-const TOTAL_STARS = 30;
+const TOTAL_STARS = 27;
 
 // Animation
 const starAnimation = {
@@ -38,7 +38,7 @@ const Stars: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-  // Set mounted to true 
+  // Set mounted to true
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -88,10 +88,26 @@ const Stars: React.FC = () => {
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {/* Gradient Overlay Following Cursor */}
       <div
-        className="absolute w-[400px] h-[400px] bg-gradient-to-r from-purple-900/10 via-indigo-900/10 to-blue-900/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute w-[400px] h-[400px] pointer-events-none"
         style={{
-          transform: `translate(${cursorPosition.x - 200}px, ${cursorPosition.y - 200}px)`,
-          transition: "transform 0.1s linear",
+          transform: `translate3d(${cursorPosition.x - 200}px, ${
+            cursorPosition.y - 200
+          }px, 0)`,
+          background: `
+      radial-gradient(
+        circle at center,
+        rgba(99, 102, 241, 0.15) 0%,
+        rgba(79, 70, 229, 0.1) 50%,
+        rgba(67, 56, 202, 0) 100%
+      )
+    `,
+          filter: "blur(64px)",
+          willChange: "transform",
+          borderRadius: "50%",
+          opacity: mounted ? 1 : 0,
+          transitionProperty: "transform, opacity",
+          transitionDuration: "0.1s, 0.3s",
+          transitionTimingFunction: "linear, ease-in-out",
         }}
       />
 
