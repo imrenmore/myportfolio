@@ -14,7 +14,7 @@ export async function GET() {
         "Content-Disposition": 'attachment; filename="resume.pdf"',
       },
     });
-  } catch (err) {
+} catch {
     return new NextResponse("Resume not found", { status: 404 });
   }
 }
