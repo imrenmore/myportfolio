@@ -5,10 +5,10 @@ const Resume = () => {
   const { darkMode } = useTheme();
 
   const handleDownload = () => {
-    const pdfUrl = "/resume.pdf";
+    const pdfUrl = "/api/resume";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "ImrenMore_Resume.pdf";
+    link.download = "resume.pdf";
     link.click();
   };
 
