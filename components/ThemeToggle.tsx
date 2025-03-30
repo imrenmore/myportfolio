@@ -11,6 +11,7 @@ const ThemeToggle = () => {
         darkMode ? "bg-gray-800" : "bg-gray-300"
       }`}
       onClick={toggleDarkMode}
+      aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
     >
       <motion.div 
         className={`w-5 h-5 rounded-full shadow-md ${
