@@ -30,15 +30,15 @@ const AboutMe: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5 }}>
           <p>
-            I am a computer science student from{" "}
+            I am a MEng graduate student from{" "}
             <strong className="font-semibold">
-              California State University, Sacramento
+              Cornell Tech
             </strong>
-            . I have a minor in{" "}
-            <strong className="font-semibold">Applied Mathematics</strong> and
-            an honors minor in{" "}
+            . I have a Bachelors in{" "}
+            <strong className="font-semibold">Computer Science</strong> and
+            a minor in{" "}
             <strong className="font-semibold">
-              Global Engagement and Leadership
+              AppliedMathematics
             </strong>
             . I love to create and design applications
             <strong className="font-semibold">. Fun Fact</strong>: I like rubber
