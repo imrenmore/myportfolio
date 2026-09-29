@@ -30,7 +30,7 @@ const AboutMe: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5 }}>
           <p>
-            I am a MEng graduate student from{" "}
+            I am a MEng CS graduate student from{" "}
             <strong className="font-semibold">
               Cornell Tech
             </strong>
@@ -38,7 +38,7 @@ const AboutMe: React.FC = () => {
             <strong className="font-semibold">Computer Science</strong> and
             a minor in{" "}
             <strong className="font-semibold">
-              AppliedMathematics
+              Applied Mathematics
             </strong>
             . I love to create and design applications
             <strong className="font-semibold">. Fun Fact</strong>: I like rubber

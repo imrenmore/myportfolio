@@ -18,8 +18,8 @@ const LanguagesCard: React.FC = () => {
   // Skills data
   const languageSkills: LanguageSkill[] = [
     { name: "Java", years: 4, progress: 90, color: "bg-blue-300" },
-    { name: "Python", years: 3, progress: 75, color: "bg-purple-300" },
-    { name: "JavaScript", years: 2.5, progress: 60, color: "bg-yellow-200" },
+    { name: "Python", years: 4, progress: 90, color: "bg-purple-300" },
+    { name: "JavaScript", years: 3, progress: 75, color: "bg-yellow-200" },
   ];
 
   return (
