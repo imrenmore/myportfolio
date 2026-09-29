@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Socials*/}
         <div className="flex justify-center space-x-6 mb-8">
           <a
-            href="mailto:imrenkmore@gmail.com"
+            href="mailto:im436@cornell.edu"
             className={`flex items-center ${
               darkMode
                 ? "text-gray-300 hover:text-blue-400"
@@ -68,7 +68,7 @@ const Footer = () => {
           } space-y-2 text-center`}
         >
           <p>
-            Copyright © 2025{" "}
+            Copyright © 2026{" "}
             <span
               className={`${
                 darkMode ? "text-blue-400" : "text-blue-700"
