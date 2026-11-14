@@ -48,6 +48,50 @@ const Resume = () => {
             Professional Experience
           </h2>
 
+        {/* IT Technician */}
+          <div
+            className={`mb-8 p-6 rounded-lg shadow-sm border ${
+              darkMode
+                ? "bg-gray-800 border-gray-700"
+                : "bg-blue-50 border-blue-100"
+            }`}
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h3
+                className={`text-xl font-semibold ${
+                  darkMode ? "text-gray-200" : "text-gray-800"
+                }`}
+              >
+                Technical Support Specialist 
+              </h3>
+              <span
+                className={`text-sm ${
+                  darkMode ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
+                Murphy Austin Adams Schoenfeld LLP
+              </span>
+            </div>
+            <ul className="space-y-2">
+              {[
+                "Provided Tier 1–2 technical support for 50+ attorneys, partners, and staff, resolving issues related to login credentials, AD, printers, file access, and workflows.",
+                "Researched and evaluated imaging solutions (SCCM & third-party vendors), providing recommendations to standardize laptop provisioning and reduce setup time.",
+            
+              ].map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 mt-2.5 mr-3 bg-blue-500 rounded-full"></span>
+                  <span
+                    className={`${
+                      darkMode ? "text-gray-300" : "text-gray-700"
+                    }`}
+                  >
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Cybersecurity IT Intern */}
           <div
             className={`mb-8 p-6 rounded-lg shadow-sm border ${

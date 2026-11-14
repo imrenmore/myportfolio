@@ -25,7 +25,7 @@ export default function Home() {
             <h1 className="text-5xl font-bold mt-2">Imren More</h1>
           </FadeIn>
           <FadeIn delay={0.6}>
-            <p className="mt-2 text-lg">I specialize in design and security.</p>
+            <p className="mt-2 text-lg">I specialize in products, design, and their security.</p>
           </FadeIn>
           {/* Background elements toggle between stars and ducks */}
           <BackgroundElements />

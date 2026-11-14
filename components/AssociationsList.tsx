@@ -16,8 +16,10 @@ const AssociationsList = () => {
       transition={{ duration: 1, delay: 1 }}>
       <h2 className="text-2xl font-semibold mb-4">Associations</h2>
       <ul className="pl-5 space-y-2">
-        <li>★ Women in STEM (Officer)</li>
-        <li>★ Cybersecurity Club (Officer)</li>
+        <li>★ Cornell Tech South Asian Club (Marketing)</li>
+        <li>★ Cornell Fashion Tech Club (Treasurer)</li>
+        <li>★ CSUS Women in STEM (Officer)</li>
+        <li>★ CSUS Cybersecurity Club (Officer)</li>
         <li>★ MESA/MEP</li>
         <li>★ GE Honors Program</li>
         <li>★ Girls Who Code</li>
